@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkte - Loop Studio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="images/LOOP STUDIO - Logo.png" alt="Loop Studio Logo" id="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Startseite</a></li>
+                <li><a href="products.html">Produkte</a></li>
+                <li><a href="brands.html">Marken</a></li>
+                <li><a href="popup-store.html">Pop-up-Store</a></li>
+                <li><a href="cart.html">Warenkorb (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Anmelden</a></li>
+                <li><a href="account.html">Kundenkonto</a></li>
+                <li><a href="about.html">Über uns</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Verfügbare Produkte</h2>
+        <button id="toggle-categories" class="accordion-btn">Kategorien anzeigen</button>
+        <div class="categories hidden" id="categories-panel">
+            <button class="category-btn active" data-category="all">Alle</button>
+            <button class="category-btn" data-category="Oberteile">Oberteile</button>
+            <button class="category-btn" data-category="Kleider">Kleider</button>
+            <button class="category-btn" data-category="Hosen">Hosen</button>
+            <button class="category-btn" data-category="Schuhe">Schuhe</button>
+        </div>
+        <button id="toggle-filters" class="accordion-btn">Filter anzeigen</button>
+        <div class="filters hidden" id="filters-panel">
+            <select id="size-filter" class="filter-select">
+                <option value="Alle">Größe</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="42">42</option>
+            </select>
+            <select id="color-filter" class="filter-select">
+                <option value="Alle">Farbe</option>
+                <option value="Schwarz">Schwarz</option>
+                <option value="Blau">Blau</option>
+                <option value="Weiß">Weiß</option>
+            </select>
+            <select id="condition-filter" class="filter-select">
+                <option value="Alle">Zustand</option>
+                <option value="Neu">Neu</option>
+                <option value="Gebraucht">Gebraucht</option>
+            </select>
+        </div>
+        <div class="product-grid" id="product-grid">
+            <div class="product" data-category="Kleider" data-size="M" data-color="Schwarz" data-condition="Neu" data-description="Elegantes Vintage-Kleid von Zimmermann. Perfekt für besondere Anlässe.">
+                <div class="image-gallery">
+                    <img src="images/Bild Loop Studio.webp" alt="Produkt 1" class="product-img" data-imgs="images/Bild Loop Studio.webp,images/shopping.webp">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+                <h4>Zimmermann Kleid</h4>
+                <p class="product-description">Elegantes Vintage-Kleid von Zimmermann. Perfekt für besondere Anlässe.</p>
+                <p>300 €</p>
+                <button data-name="Zimmermann Kleid" data-price="300" data-img="images/Bild Loop Studio.webp">Zum Warenkorb hinzufügen</button>
+            </div>
+            <div class="product" data-category="Hosen" data-size="L" data-color="Blau" data-condition="Gebraucht" data-description="Klassische Levi's Jeans in gutem Zustand. Bequem und stilvoll.">
+                <div class="image-gallery">
+                    <img src="images/shopping.webp" alt="Produkt 2" class="product-img" data-imgs="images/shopping.webp,images/Bild Loop Studio.webp">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+                <h4>Levis Jeans</h4>
+                <p class="product-description">Klassische Levi's Jeans in gutem Zustand. Bequem und stilvoll.</p>
+                <p>80 €</p>
+                <button data-name="Levis Jeans" data-price="80" data-img="images/shopping.webp">Zum Warenkorb hinzufügen</button>
+            </div>
+            <div class="product" data-category="Schuhe" data-size="42" data-color="Weiß" data-condition="Neu" data-description="Moderne Adidas Sneaker. Ideal für den Alltag oder Sport.">
+                <div class="image-gallery">
+                    <img src="images/adidas_sneaker.webp" alt="Produkt 3" class="product-img" data-imgs="images/adidas_sneaker.webp,images/shopping.webp">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+                <h4>Adidas Sneaker</h4>
+                <p class="product-description">Moderne Adidas Sneaker. Ideal für den Alltag oder Sport.</p>
+                <p>120 €</p>
+                <button data-name="Adidas Sneaker" data-price="120" data-img="images/adidas_sneaker.webp">Zum Warenkorb hinzufügen</button>
+            </div>
+            <div class="product" data-category="Kleider" data-size="S" data-color="Rot" data-condition="Gebraucht" data-description="Schönes Sommerkleid von Tommy Hilfiger. Leicht und luftig.">
+                <div class="image-gallery">
+                    <img src="images/Bild Loop Studio.webp" alt="Produkt 4" class="product-img" data-imgs="images/Bild Loop Studio.webp">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+                <h4>Tommy Hilfiger Sommerkleid</h4>
+                <p class="product-description">Schönes Sommerkleid von Tommy Hilfiger. Leicht und luftig. Kaum getragen, sehr guter Zustand</p>
+                <p>90 €</p>
+                <button data-name="Tommy Hilfiger Sommerkleid" data-price="90" data-img="images/Bild Loop Studio.webp">Zum Warenkorb hinzufügen</button>
+            </div>
+            <div class="product" data-category="Hosen" data-size="M" data-color="Schwarz" data-condition="Neu" data-description="Schicke schwarze Hose von Massimo Dutti. Perfekt für Büro oder Ausgehen.">
+                <div class="image-gallery">
+                    <img src="images/shopping.webp" alt="Produkt 5" class="product-img" data-imgs="images/shopping.webp">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+                <h4>Massimo Dutti Hose</h4>
+                <p class="product-description">Schicke schwarze Hose von Massimo Dutti. Perfekt für Büro oder Ausgehen.</p>
+                <p>110 €</p>
+                <button data-name="Massimo Dutti Hose" data-price="110" data-img="images/shopping.webp">Zum Warenkorb hinzufügen</button>
+            </div>
+            <div class="product" data-category="Oberteile" data-size="M" data-color="Schwarz" data-condition="Gebraucht" data-description="Elegante Gucci-Jacke mit hochwertiger Verarbeitung und zeitlosem Design.">
+                <div class="image-gallery">
+                    <img src="images/shopping.webp" alt="Produkt 6" class="product-img" data-imgs="images/shopping.webp,images/Bild Loop Studio.webp">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+                <h4>Gucci Jacke</h4>
+                <p class="product-description">Elegante Gucci-Jacke mit hochwertiger Verarbeitung und zeitlosem Design.</p>
+                <p>450 €</p>
+                <button data-name="Gucci Jacke" data-price="450" data-img="images/shopping.webp">Zum Warenkorb hinzufügen</button>
+            </div>
+            <div class="product" data-category="Oberteile" data-size="L" data-color="Weiß" data-condition="Neu" data-description="Modischer Chanel-Blazer, perfekt für Business- oder Abendlooks.">
+                <div class="image-gallery">
+                    <img src="images/Bild Loop Studio.webp" alt="Produkt 7" class="product-img" data-imgs="images/Bild Loop Studio.webp,images/shopping.webp">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+                <h4>Chanel Blazer</h4>
+                <p class="product-description">Modischer Chanel-Blazer, perfekt für Business- oder Abendlooks.</p>
+                <p>680 €</p>
+                <button data-name="Chanel Blazer" data-price="680" data-img="images/Bild Loop Studio.webp">Zum Warenkorb hinzufügen</button>
+            </div>
+            <div class="product" data-category="Schuhe" data-size="38" data-color="Schwarz" data-condition="Gebraucht" data-description="Prada-Stiefel mit markanter Silhouette und luxuriösem Finish.">
+                <div class="image-gallery">
+                    <img src="images/adidas_sneaker.webp" alt="Produkt 8" class="product-img" data-imgs="images/adidas_sneaker.webp,images/shopping.webp">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+                <h4>Prada Stiefel</h4>
+                <p class="product-description">Prada-Stiefel mit markanter Silhouette und luxuriösem Finish.</p>
+                <p>320 €</p>
+                <button data-name="Prada Stiefel" data-price="320" data-img="images/adidas_sneaker.webp">Zum Warenkorb hinzufügen</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Loop Studio</p>
+    </footer>
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-img" src="" alt="">
+            <p><strong>Größe:</strong> <span id="modal-size"></span></p>
+            <p><strong>Zustand:</strong> <span id="modal-condition"></span></p>
+            <p><strong>Beschreibung:</strong> <span id="modal-description"></span></p>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmelden - Loop Studio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="images/LOOP STUDIO - Logo.png" alt="Loop Studio Logo" id="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Startseite</a></li>
+                <li><a href="products.html">Produkte</a></li>
+                <li><a href="brands.html">Marken</a></li>
+                <li><a href="popup-store.html">Pop-up-Store</a></li>
+                <li><a href="cart.html">Warenkorb (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Anmelden</a></li>
+                <li><a href="account.html">Kundenkonto</a></li>
+                <li><a href="about.html">Über uns</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Anmelden</h2>
+        <p>Bitte gib das Passwort ein, um das Kundenkonto für den Projektplan zu öffnen.</p>
+        <form>
+            <label for="username">Benutzername:</label>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" name="password"><br>
+            <button type="submit">Anmelden</button>
+        </form>
+        <p id="login-error" class="coupon-message error" style="display:none;"></p>
+    </main>
+    <footer>
+        <p>&copy; 2026 Loop Studio
+            Projektmanagement WM7 - SS26 - Hamersmit
+        </p>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>

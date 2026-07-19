@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warenkorb - Loop Studio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="images/LOOP STUDIO - Logo.png" alt="Loop Studio Logo" id="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Startseite</a></li>
+                <li><a href="products.html">Produkte</a></li>
+                <li><a href="brands.html">Marken</a></li>
+                <li><a href="popup-store.html">Pop-up-Store</a></li>
+                <li><a href="cart.html">Warenkorb (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Anmelden</a></li>
+                <li><a href="account.html">Kundenkonto</a></li>
+                <li><a href="about.html">Über uns</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Ihr Warenkorb</h2>
+        <div id="cart-container">
+            <p id="empty-cart">Ihr Warenkorb ist leer.</p>
+            <div id="cart-items" class="cart-items"></div>
+        </div>
+        <div id="cart-summary" class="cart-summary" style="display: none;">
+            <h3>Zusammenfassung</h3>
+            <p>Gesamtpreis: <strong id="total-price">€0,00</strong></p>
+            <button id="checkout-btn" class="checkout-btn">Zur Kasse gehen</button>
+        </div>
+    </main>
+
+    <!-- Umfrage Modal -->
+    <div id="survey-modal" class="modal">
+        <div class="modal-content survey-modal">
+            <span class="close" id="close-survey">&times;</span>
+            <h2>Wie bist Du auf uns aufmerksam geworden?</h2>
+            <form id="survey-form">
+                <div class="survey-options">
+                    <label><input type="radio" name="source" value="Pop-up-Store" required> Pop-up-Store</label>
+                    <label><input type="radio" name="source" value="Social Media" required> Social Media</label>
+                    <label><input type="radio" name="source" value="Freunde/Familie" required> Freunde/Familie</label>
+                    <label><input type="radio" name="source" value="Suchmaschine" required> Suchmaschine</label>
+                    <label><input type="radio" name="source" value="Werbung" required> Werbung</label>
+                </div>
+                <div class="survey-other">
+                    <label>
+                        <input type="radio" name="source" value="Sonstiges" required> Sonstiges:
+                        <input type="text" id="other-text" placeholder="Bitte hier eingeben...">
+                    </label>
+                </div>
+                <button type="submit" class="submit-btn">Absenden</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Gutschein Modal -->
+    <div id="voucher-modal" class="modal">
+        <div class="modal-content voucher-modal">
+            <span class="close" id="close-voucher">&times;</span>
+            <h2>🎉 Glückwunsch!</h2>
+            <p>Danke für deine Antwort! Hier ist dein exklusiver Rabattcode:</p>
+            <div class="voucher-code">
+                <span id="voucher-text">LOOP5PERCENT</span>
+                <button class="copy-btn" id="copy-btn">Kopieren</button>
+            </div>
+            <p>5% Rabatt auf deine nächste Bestellung!</p>
+            <button class="close-voucher-btn" id="close-voucher-btn">Weiter zum Checkout</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Loop Studio
+            Projektmanagement WM7 - SS26 - Hamersmit
+        </p>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
