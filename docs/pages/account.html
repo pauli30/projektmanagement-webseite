@@ -17,29 +17,12 @@
             display: flex;
             justify-content: flex-end;
         }
-        .pdf-pages {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .pdf-page-card {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 0.75rem;
-        }
-        .pdf-page-card canvas {
+        .pdf-frame {
             width: 100%;
-            height: auto;
+            min-height: 920px;
             border: 1px solid #ccc;
+            border-radius: 8px;
             background: #fff;
-            display: block;
-        }
-        .pdf-page-card p {
-            margin: 0.5rem 0 0;
-            text-align: center;
-            font-size: 0.95rem;
-            color: #555;
         }
     </style>
 </head>
@@ -66,10 +49,17 @@
         <p>Hier ist der Projektmanagementplan als PDF hinterlegt.</p>
         <div class="pdf-viewer-shell">
             <div class="pdf-toolbar">
-                <a href="/projektmanagement-webseite/files/Projektmanagement.pdf?v=5" class="checkout-btn" target="_blank" rel="noopener">PDF herunterladen</a>
+                <a href="/projektmanagement-webseite/files/Projektmanagement.pdf?v=6" class="checkout-btn" target="_blank" rel="noopener">PDF herunterladen</a>
             </div>
-            <p>Die komplette PDF wird im nächsten Schritt direkt im Browser geöffnet:</p>
-            <a href="/projektmanagement-webseite/files/Projektmanagement.pdf?v=5" target="_blank" rel="noopener" style="display:inline-block; margin-top:0.5rem; font-weight:bold; color:#86000e;">Projektmanagement PDF öffnen</a>
+            <iframe
+                src="https://docs.google.com/viewer?embedded=true&url=https://pauli30.github.io/projektmanagement-webseite/files/Projektmanagement.pdf?v=6"
+                class="pdf-frame"
+                title="Projektmanagement PDF"
+                loading="lazy"
+                allowfullscreen
+            ></iframe>
+            <p style="margin-top: 1rem;">Die komplette PDF kann auch direkt im Browser geöffnet werden:</p>
+            <a href="/projektmanagement-webseite/files/Projektmanagement.pdf?v=6" target="_blank" rel="noopener" style="display:inline-block; margin-top:0.5rem; font-weight:bold; color:#86000e;">Projektmanagement PDF öffnen</a>
         </div>
         <button id="logout-btn" class="checkout-btn">Abmelden</button>
     </main>
@@ -77,43 +67,5 @@
         <p>&copy; 2026 Loop Studio</p>
     </footer>
     <script src="../js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script>
-        const pdfUrl = '/projektmanagement-webseite/files/Projektmanagement.pdf?v=4';
-        const container = document.getElementById('pdf-pages');
-
-        if (window.pdfjsLib) {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-            pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
-                const promises = [];
-                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                    promises.push(pdf.getPage(pageNum).then(function(page) {
-                        const wrapper = document.createElement('div');
-                        wrapper.className = 'pdf-page-card';
-
-                        const canvas = document.createElement('canvas');
-                        const viewport = page.getViewport({ scale: 1.2 });
-                        canvas.width = viewport.width;
-                        canvas.height = viewport.height;
-                        wrapper.appendChild(canvas);
-
-                        const label = document.createElement('p');
-                        label.textContent = 'Seite ' + pageNum + ' von ' + pdf.numPages;
-                        wrapper.appendChild(label);
-
-                        container.appendChild(wrapper);
-
-                        return page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
-                    }));
-                }
-                return Promise.all(promises);
-            }).catch(function(error) {
-                container.innerHTML = '<p>Die PDF konnte nicht geladen werden.</p>';
-                console.error(error);
-            });
-        } else {
-            container.innerHTML = '<p>Der PDF-Viewer konnte nicht geladen werden.</p>';
-        }
-    </script>
 </body>
 </html>
