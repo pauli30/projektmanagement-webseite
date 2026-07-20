@@ -4,51 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pop-up-Store - Loop Studio</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="/projektmanagement-webseite/css/styles.css">
+    <style>
+        .confetti-piece { position: fixed; width: 10px; height: 16px; top: -20px; opacity: 0.9; animation: fall 2.8s linear forwards; z-index: 9999; }
+        @keyframes fall { 0% { transform: translate3d(0,0,0) rotate(0deg); } 100% { transform: translate3d(var(--drift), 110vh, 0) rotate(720deg); opacity: 0; } }
+    </style>
 </head>
 <body>
     <header>
         <div id="logo-container">
-            <img src="images/LOOP STUDIO - Logo.png" alt="Loop Studio Logo" id="logo">
+            <img src="/projektmanagement-webseite/images/LOOP%20STUDIO%20-%20Logo.png" alt="Loop Studio Logo" id="logo">
         </div>
         <nav>
             <ul>
-                <li><a href="../../index.html">Startseite</a></li>
-                <li><a href="products.html">Produkte</a></li>
-                <li><a href="brands.html">Marken</a></li>
-                <li><a href="popup-store.html">Pop-up-Store</a></li>
-                <li><a href="cart.html">Warenkorb (<span id="cart-count">0</span>)</a></li>
-                <li><a href="login.html">Anmelden</a></li>
-                <li><a href="account.html">Kundenkonto</a></li>
-                <li><a href="about.html">Über uns</a></li>
+                <li><a href="/projektmanagement-webseite/">Startseite</a></li>
+                <li><a href="/projektmanagement-webseite/pages/products.html">Produkte</a></li>
+                <li><a href="/projektmanagement-webseite/pages/brands.html">Marken</a></li>
+                <li><a href="/projektmanagement-webseite/pages/popup-store.html">Pop-up-Store</a></li>
+                <li><a href="/projektmanagement-webseite/pages/cart.html">Warenkorb (<span id="cart-count">0</span>)</a></li>
+                <li><a href="/projektmanagement-webseite/pages/login.html">Anmelden</a></li>
+                <li><a href="/projektmanagement-webseite/pages/account.html">Kundenkonto</a></li>
+                <li><a href="/projektmanagement-webseite/pages/about.html">Über uns</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h2>Pop-up-Store</h2>
-        <img src="images/Bild Loop Studio.webp" alt="Pop-up-Store" class="about-image">
+        <img src="/projektmanagement-webseite/images/Bild%20Loop%20Studio.webp" alt="Pop-up-Store" class="about-image">
         <aside>
             <h3>Exklusive Pop-up Events</h3>
             <p>Entdecke unsere temporären Pop-up-Stores, wo du einzigartige pre-loved Modeartikel findest. Der Store bietet eine kuratierte Auswahl an High-Fashion-Stücken zu unschlagbaren Preisen.</p>
             <h4>Nächster Standort: Stuttgart, Calwer Straße</h4>
-            <p>Datum: 15. Mai 2026<br>Öffnungszeiten: 10:00 - 18:00 Uhr</p>
+            <p>Datum: 21. April – 19. Mai 2027<br>Öffnungszeiten: 10:00 – 18:00 Uhr</p>
             <div class="popup-images">
-                <img src="images/Bild Loop Studio.webp" alt="Pop-up-Store Innen">
-                <img src="images/shopping.webp" alt="Pop-up-Store Außen">
+                <img src="/projektmanagement-webseite/images/Bild%20Loop%20Studio.webp" alt="Pop-up-Store Innen">
+                <img src="/projektmanagement-webseite/images/shopping.webp" alt="Pop-up-Store Außen">
             </div>
             <h4>Standort auf der Karte</h4>
-            <iframe src="https://maps.app.goo.gl/hSXuSXB5GJha1HUZA
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.1782%2C48.7770%2C9.1918%2C48.7830&layer=mapnik&marker=48.7800%2C9.1840" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </aside>
     </main>
     <script>
-        // Konfetti beim Laden der Seite
-        document.addEventListener('DOMContentLoaded', function() {
-            confetti({
-                particleCount: 500,
-                spread: 100,
-                origin: { y: 0.6 }
-            });
-        });
+        function launchConfetti() {
+            const colors = ['#86000e', '#eba2b1', '#f4d35e', '#2e8b57'];
+            for (let i = 0; i < 90; i++) {
+                const piece = document.createElement('span');
+                piece.className = 'confetti-piece';
+                piece.style.left = Math.random() * 100 + 'vw';
+                piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+                piece.style.setProperty('--drift', (Math.random() * 200 - 100) + 'px');
+                piece.style.animationDelay = (Math.random() * 0.3) + 's';
+                piece.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                document.body.appendChild(piece);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', launchConfetti);
     </script>
 </body>
 </html>
