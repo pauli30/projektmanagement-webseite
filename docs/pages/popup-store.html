@@ -46,14 +46,15 @@
     </main>
     <script>
         function launchConfetti() {
-            const colors = ['#86000e', '#eba2b1', '#f4d35e', '#2e8b57'];
-            for (let i = 0; i < 90; i++) {
+            const colors = ['#86000e', '#eba2b1', '#f4d35e', '#c0c0c0', '#2e8b57'];
+            for (let i = 0; i < 180; i++) {
                 const piece = document.createElement('span');
                 piece.className = 'confetti-piece';
                 piece.style.left = Math.random() * 100 + 'vw';
                 piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-                piece.style.setProperty('--drift', (Math.random() * 200 - 100) + 'px');
-                piece.style.animationDelay = (Math.random() * 0.3) + 's';
+                piece.style.setProperty('--drift', (Math.random() * 300 - 150) + 'px');
+                piece.style.animationDuration = (2.4 + Math.random() * 1.4) + 's';
+                piece.style.animationDelay = (Math.random() * 0.2) + 's';
                 piece.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
                 document.body.appendChild(piece);
             }
